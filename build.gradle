@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+
+    }
+}
+
+
+repositories {
+    maven { url "http://repo.spring.io/release" }
+}
+
+wrapper {
+    gradleVersion '3.5'
+}
+
+dependencies {
+
+}
+
