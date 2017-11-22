@@ -1,4 +1,4 @@
 spring:
-  application.name: consumer
-server.port: ${PORT:8081}
+  application.name: producer
+server.port: ${PORT:8090}
 management.security.enabled: false

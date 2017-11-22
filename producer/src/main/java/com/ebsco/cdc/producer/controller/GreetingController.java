@@ -1,4 +1,4 @@
-package com.ebsco.cdc.consumer.controller;
+package com.ebsco.cdc.producer.controller;
 
 import java.net.MalformedURLException;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ebsco.cdc.consumer.model.Greeting;
-import com.ebsco.cdc.consumer.service.GreetingService;
+import com.ebsco.cdc.producer.model.Greeting;
+import com.ebsco.cdc.producer.service.GreetingService;
 
 @RestController
 public class GreetingController {

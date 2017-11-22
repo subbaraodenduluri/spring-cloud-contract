@@ -1,4 +1,4 @@
-package com.ebsco.cdc.consumer.model;
+package com.ebsco.cdc.producer.model;
 
 public class Greeting {
     private String name;

@@ -1,6 +1,6 @@
-package com.ebsco.cdc.consumer.service;
+package com.ebsco.cdc.producer.service;
 
-import com.ebsco.cdc.consumer.model.Greeting;
+import com.ebsco.cdc.producer.model.Greeting;
 
 public interface GreetingService {
     public String greetPerson(Greeting greeting);

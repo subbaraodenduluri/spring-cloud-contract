@@ -1,10 +1,10 @@
-package com.ebsco.cdc.consumer.service.impl;
+package com.ebsco.cdc.producer.service.impl;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.ebsco.cdc.consumer.model.Greeting;
-import com.ebsco.cdc.consumer.service.GreetingService;
+import com.ebsco.cdc.producer.model.Greeting;
+import com.ebsco.cdc.producer.service.GreetingService;
 
 @Service
 public class GreetingServiceImpl implements GreetingService {
