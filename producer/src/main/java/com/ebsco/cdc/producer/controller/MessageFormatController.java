@@ -27,7 +27,7 @@ public class MessageFormatController {
             consumes = "application/json",
             produces = "application/json")
     public ResponseEntity<FormattedGreetingDTO> gimmeABeer(@RequestBody GreetingDTO greetingDTO) throws MalformedURLException {
-        return new ResponseEntity<FormattedGreetingDTO>(new MessageFormatServiceImpl().formatGreetingMessage(greetingDTO), HttpStatus.OK);
+        return new ResponseEntity<FormattedGreetingDTO>(messageFormatService.formatGreetingMessage(greetingDTO), HttpStatus.OK);
     }
 
 }
