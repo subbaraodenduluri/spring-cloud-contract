@@ -38,6 +38,7 @@ ext {
 }
 
 dependencies {
+//	compile project(':producer')
 	compile('org.springframework.boot:spring-boot-starter-actuator')
 //	compile('org.springframework.cloud:spring-cloud-starter-stream-rabbit')
 	compile('org.springframework.boot:spring-boot-starter-web')
