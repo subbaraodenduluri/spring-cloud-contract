@@ -5,6 +5,10 @@ public class GreetingDTO {
     private String prefix;
     private String suffix;
     
+    public GreetingDTO() {
+        super();
+    }
+    
     public GreetingDTO(String name) {
         super();
         this.name = name;

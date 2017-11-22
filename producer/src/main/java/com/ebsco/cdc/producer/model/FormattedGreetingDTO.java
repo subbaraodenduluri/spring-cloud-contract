@@ -3,6 +3,10 @@ package com.ebsco.cdc.producer.model;
 public class FormattedGreetingDTO {
 	private String formattedGreeting;
 
+	public FormattedGreetingDTO() {
+		super();
+	}
+
 	public FormattedGreetingDTO(String formattedGreeting) {
 		super();
 		this.formattedGreeting = formattedGreeting;

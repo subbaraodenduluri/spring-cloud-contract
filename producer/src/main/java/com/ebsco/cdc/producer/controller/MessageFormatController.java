@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ebsco.cdc.producer.model.FormattedGreetingDTO;
 import com.ebsco.cdc.producer.model.GreetingDTO;
 import com.ebsco.cdc.producer.service.MessageFormatService;
+import com.ebsco.cdc.producer.service.impl.MessageFormatServiceImpl;
 
 @RestController
 public class MessageFormatController {
@@ -23,9 +24,10 @@ public class MessageFormatController {
     
     @RequestMapping(method = RequestMethod.POST,
             value = "/formatgreeting",
-            consumes = MediaType.APPLICATION_JSON_VALUE)
+            consumes = "application/json",
+            produces = "application/json")
     public ResponseEntity<FormattedGreetingDTO> gimmeABeer(@RequestBody GreetingDTO greetingDTO) throws MalformedURLException {
-        return new ResponseEntity<FormattedGreetingDTO>(messageFormatService.formatGreetingMessage(greetingDTO), HttpStatus.OK);
+        return new ResponseEntity<FormattedGreetingDTO>(new MessageFormatServiceImpl().formatGreetingMessage(greetingDTO), HttpStatus.OK);
     }
 
 }

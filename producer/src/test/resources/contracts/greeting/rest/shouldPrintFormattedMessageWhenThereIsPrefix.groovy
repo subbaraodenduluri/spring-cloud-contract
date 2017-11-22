@@ -1,4 +1,8 @@
-// rest/shouldPrintGenericMessageWhenThereIsNoPrefix.groovy
+package contracts.greeting.rest
+
+import org.springframework.cloud.contract.spec.Contract
+
+// rest/shouldPrintFormattedMessageWhenThereIsPrefix.groovy
 org.springframework.cloud.contract.spec.Contract.make {
 		description("""
 Represents a successful scenario of printing a custom greeting
@@ -17,10 +21,9 @@ then:
 		method 'POST'
 		url '/formatgreeting'
 		body(
-		
-				name: "John Doe",
-				prefix: "Greetings ",
-				suffix: ", How are you?"
+			prefix: "Greetings ",
+			name: "John Doe",
+			suffix: ", How are you?"
 		)
 		headers {
 			contentType(applicationJson())
