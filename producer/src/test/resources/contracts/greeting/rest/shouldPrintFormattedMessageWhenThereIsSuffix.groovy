@@ -21,8 +21,9 @@ then:
 		method 'POST'
 		url '/formatgreeting'
 		body(
-			prefix: "Greetings ",
-			name: "John Doe"
+			
+			name: "John Doe",
+			suffix: ", How are you doing?"
 		)
 		headers {
 			contentType(applicationJson())
@@ -32,7 +33,7 @@ then:
 		status 200
 		body("""
 			{
-				"formattedGreeting": "Greetings John Doe"
+				"formattedGreeting": "John Doe, How are you doing?"
 			}
 			""")
 		headers {

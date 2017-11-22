@@ -21,7 +21,7 @@ then:
 		method 'POST'
 		url '/formatgreeting'
 		body(
-			prefix: "Greetings ",
+			
 			name: "John Doe"
 		)
 		headers {
@@ -32,7 +32,7 @@ then:
 		status 200
 		body("""
 			{
-				"formattedGreeting": "Greetings John Doe"
+				"formattedGreeting": "Hi John Doe"
 			}
 			""")
 		headers {
