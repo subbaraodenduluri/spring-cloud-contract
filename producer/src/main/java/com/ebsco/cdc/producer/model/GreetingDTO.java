@@ -1,22 +1,22 @@
 package com.ebsco.cdc.producer.model;
 
-public class Greeting {
+public class GreetingDTO {
     private String name;
     private String prefix;
     private String suffix;
     
-    public Greeting(String name) {
+    public GreetingDTO(String name) {
         super();
         this.name = name;
     }
     
-    public Greeting(String prefix, String name) {
+    public GreetingDTO(String prefix, String name) {
         super();
         this.prefix = prefix;
         this.name = name;
     }
     
-    public Greeting(String prefix, String name, String suffix) {
+    public GreetingDTO(String prefix, String name, String suffix) {
         super();
         this.prefix = prefix;
         this.name = name;

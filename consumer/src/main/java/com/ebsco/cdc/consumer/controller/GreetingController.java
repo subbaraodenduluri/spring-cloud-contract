@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ebsco.cdc.consumer.model.Greeting;
+import com.ebsco.cdc.consumer.dto.GreetingDTO;
 import com.ebsco.cdc.consumer.service.GreetingService;
 
 @RestController
@@ -23,8 +23,8 @@ public class GreetingController {
     @RequestMapping(method = RequestMethod.POST,
             value = "/greeting",
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> gimmeABeer(@RequestBody Greeting greeting) throws MalformedURLException {
-        return new ResponseEntity<String>(greetingService.greetPerson(greeting), HttpStatus.OK);
+    public ResponseEntity<String> greetMe(@RequestBody GreetingDTO greetingDTO) throws MalformedURLException {
+        return new ResponseEntity<String>(greetingService.greetPerson(greetingDTO), HttpStatus.OK);
     }
 
 }

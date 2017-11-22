@@ -3,12 +3,12 @@ package com.ebsco.cdc.producer;
 import org.junit.Before;
 import org.springframework.boot.test.json.JacksonTester;
 
-import com.ebsco.cdc.producer.model.Greeting;
+import com.ebsco.cdc.producer.model.GreetingDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public abstract class AbstractTest {
 
-    public JacksonTester<Greeting> json;
+    public JacksonTester<GreetingDTO> json;
     
 
     @Before
