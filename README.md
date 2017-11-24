@@ -3,5 +3,7 @@
 	./gradlew clean build publishToMavenLocal
 	
 # consumer
-	cd consumer
-	./gr	adlew clean build	
+	cd consumera
+	./gradlew clean build	
+	cd consumerb
+	./gradlew clean build	
