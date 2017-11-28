@@ -1,3 +1,4 @@
 include 'producer'
+include 'producer-pact'
 include 'consumera'
 include 'consumerb'
