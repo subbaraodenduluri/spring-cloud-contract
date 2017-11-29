@@ -12,6 +12,9 @@ buildscript {
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 		classpath "org.springframework.cloud:spring-cloud-contract-gradle-plugin:${findProperty('verifierVersion') ?: verifierVersion}"
+		
+		// Use for pact support
+				classpath 'au.com.dius:pact-jvm-model:2.4.18'
 	}
 }
 
@@ -51,6 +54,11 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.springframework.boot:spring-boot-devtools")
 	compile("org.springframework.cloud:spring-cloud-contract-spec")
+	
+	/* Use for pact support Start */
+	compile("org.springframework.cloud:spring-cloud-contract-spec-pact")
+	compile("au.com.dius:pact-jvm-model:2.4.18")
+	/* Use for pact support End */
 	
 	testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile("org.springframework.cloud:spring-cloud-starter-contract-verifier")
