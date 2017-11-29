@@ -16,16 +16,21 @@ public class MessageFormatServiceImpl implements MessageFormatService {
 			throw new IllegalArgumentException("Greeting name must not be null");
 		}
 
-		if (greeting.getPrefix() != null) {
-			if (greeting.getSuffix() != null) {
-				return new FormattedGreetingDTO(
+		if (greeting.getPrefix() != null && greeting.getSuffix() != null) {
+			return new FormattedGreetingDTO(
 
-						greeting.getPrefix() + greeting.getName() + greeting.getSuffix());
-			}else {
-				return new FormattedGreetingDTO(greeting.getPrefix() + greeting.getName());
-			}
+					greeting.getPrefix() + greeting.getName() + greeting.getSuffix());
+
+		} else if (greeting.getPrefix() != null) {
+
+			return new FormattedGreetingDTO(greeting.getPrefix() + greeting.getName());
+
+		} else if (greeting.getSuffix() != null) {
+			return new FormattedGreetingDTO(
+
+					greeting.getName() + greeting.getSuffix());
 		} else {
-			return new FormattedGreetingDTO("Hello " + greeting.getName());
+			return new FormattedGreetingDTO("Hi " + greeting.getName());
 		}
 
 	}
