@@ -22,6 +22,10 @@ public class MessageFormatController {
     @Autowired
     MessageFormatService messageFormatService;
     
+    public MessageFormatController(MessageFormatService messageFormatService) {
+    		this.messageFormatService = messageFormatService;
+    }
+    
     @RequestMapping(method = RequestMethod.POST,
             value = "/formatgreeting",
             consumes = "application/json",

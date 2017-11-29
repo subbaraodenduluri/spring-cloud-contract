@@ -87,7 +87,7 @@ public abstract class GreetingRestBase {
 				
 				if(greetingDTO.getSuffix() == null && greetingDTO.getPrefix() == null) {
 					return greetingDTO.getName() != null 
-							&& ("Hello "+ greetingDTO.getName()).equals("Hello John Doe");
+							&& ("Hi "+ greetingDTO.getName()).equals("Hi John Doe");
 				}
 
 				return false;				
