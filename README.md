@@ -25,6 +25,8 @@ To publish the stubs into a local maven reposioty, do
 cd producer
 ./gradlew clean build publishToMavenLocal
 ```
+`publishToMavenLocal` will publish all artifacts including stubs to `$HOME/.m2/repository/com/ebsco/cdc/producer/0.0.1-SNAPSHOT/producer-0.0.1-SNAPSHOT-stubs.jar`
+
 
 > REST Docs are generated from the contracts in `producer/target/generated-snippets/contracts.adoc`
 
