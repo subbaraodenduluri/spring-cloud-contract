@@ -1,0 +1,28 @@
+
+# Installation of Spring cli and Spring cloud cli
+
+## Installation of Spring Cli using OSX Homebrew
+
+If you are on a Mac and using Homebrew, all you need to do to install the Spring Boot CLI is:
+
+```
+brew tap pivotal/tap
+brew install springboot
+```
+
+For installation using other sources,
+> https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started-installing-spring-boot.html
+
+Homebrew will install spring to /usr/local/bin.
+
+## Installation of Spring Cloud Cli using Spring Cli
+
+```
+spring install org.springframework.cloud:spring-cloud-cli:1.4.0.RELEASE
+```
+
+## Launch Stub runner using the configuration specified in stubrunner.yml
+```
+cd stub-runner-config
+spring cloud stubrunner
+```

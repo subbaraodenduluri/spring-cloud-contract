@@ -1,0 +1,42 @@
+= NodeJS app
+
+This terribly simple NodeJS App sends a request to `http://localhost:9876/formatgreeting` and prints in
+on the response.
+
+== Required modules
+
+```
+npm install request
+```
+
+== How to run it
+
+=== Failing scenario
+
+Run it without running stub runner boot and show that it will fail.
+
+```
+$ node app.js
+```
+
+you will get sth like this
+
+```
+ERROR - status [404]
+```
+
+=== Passing scenario
+
+After installing `spring cloud cli`, run `spring cloud stubrunner` in `stub-runner-config`
+
+and run the node application again
+
+```
+$ node app.js
+```
+
+this time you will get sth like this
+
+```javascript
+{"formattedGreeting":"Hi John Doe"}
+```
