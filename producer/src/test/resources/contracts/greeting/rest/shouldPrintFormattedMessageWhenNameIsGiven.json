@@ -1,0 +1,39 @@
+{
+  "consumer": {
+    "name": "consumer"
+  },
+  "provider": {
+    "name": "producer"
+  },
+  "interactions": [
+    {
+      "description": "a request for formatting a greeting with name only",
+      "providerState": "Send a name",
+      "request": {
+        "method": "POST",
+        "path": "/formatgreeting",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "name": "John Doe"
+        }
+      },
+      "response": {
+        "status": 200,
+        
+        "body": {
+          "formattedGreeting": "Hi John Doe"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    },
+    "pact-jvm": {
+      "version": "2.4.18"
+    }
+  }
+}
