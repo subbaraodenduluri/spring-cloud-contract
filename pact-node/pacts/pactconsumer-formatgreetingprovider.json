@@ -1,9 +1,9 @@
 {
   "consumer": {
-    "name": "My Consumer"
+    "name": "pactConsumer"
   },
   "provider": {
-    "name": "Format Greeting Provider"
+    "name": "FormatGreetingProvider"
   },
   "interactions": [
     {
@@ -23,7 +23,7 @@
       "response": {
         "status": 200,
         "headers": {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json;charset=UTF-8"
         },
         "body": {
           "formattedGreeting": "Hi John Doe"

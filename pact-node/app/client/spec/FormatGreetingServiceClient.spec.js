@@ -32,8 +32,8 @@ describe('Pact', () => {
     // Start mock server
     mockServer.start().then(() => {
       provider = Pact({
-        consumer: 'My Consumer',
-        provider: 'Format Greeting Provider',
+        consumer: 'pactConsumer',
+        provider: 'FormatGreetingProvider',
         port: 9876
       });
 
@@ -53,7 +53,7 @@ describe('Pact', () => {
         willRespondWith: {
           status: 200,
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json;charset=UTF-8'
           },
           body: expectedBodyFormattedGreeting
         }
