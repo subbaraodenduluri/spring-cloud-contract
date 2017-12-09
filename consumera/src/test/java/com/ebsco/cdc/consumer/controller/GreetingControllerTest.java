@@ -31,7 +31,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @AutoConfigureMockMvc
 @AutoConfigureJsonTesters
 @DirtiesContext
-@AutoConfigureStubRunner(workOffline = true, ids = "com.ebsco.cdc:producer:+:stubs:8091")
+@AutoConfigureStubRunner(workOffline = true, ids = "com.ebsco.cdc:producer:0.0.1-SNAPSHOT:stubs:8091")
+//@AutoConfigureStubRunner(workOffline = true, ids = "com.ebsco.cdc:producer:+:stubs:8091")
+//@AutoConfigureStubRunner(workOffline = true, ids = "com.ebsco.cdc:producer:1.0.+:stubs:8091")
 public class GreetingControllerTest extends AbstractTest{
 
     @Autowired MockMvc mockMvc;
