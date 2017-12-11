@@ -1,3 +1,6 @@
 include 'producer'
 include 'consumera'
 include 'consumerb'
+
+include 'producer-with-restdocs'
+

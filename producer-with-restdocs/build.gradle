@@ -61,9 +61,10 @@ dependencies {
 	compile("org.springframework.cloud:spring-cloud-contract-spec-pact")
 	compile("au.com.dius:pact-jvm-model:2.4.18")
 	/* Use for pact support End */
-	
+	testCompile("org.springframework.restdocs:spring-restdocs-mockmvc")
 	testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile("org.springframework.cloud:spring-cloud-starter-contract-verifier")
+    testCompile("org.springframework.cloud:spring-cloud-contract-wiremock")
     
 	
 }
@@ -102,6 +103,35 @@ test {
 }
 task wrapper(type: Wrapper) {
     gradleVersion = '3.5'
+}
+
+task stubsJar(type: Jar) {
+	classifier = "stubs"
+	into('/') {
+		include('**/com/ebsco/cdc/producer/model/*.*')
+		from("${project.rootDir}/src/main/java/")
+	}
+	into('/') {
+		include('**/com/ebsco/cdc/producer/model/*.*')
+		from("${project.buildDir}/classes/main")
+	}
+	into("META-INF/${project.group}/${project.name}/${project.version}/mappings") {
+		include('**/*.*')
+		from("${project.rootDir}/target/snippets/stubs")
+	}
+	into("META-INF/${project.group}/${project.name}/${project.version}/contracts") {
+		include('**/*.groovy')
+		from("${project.rootDir}/src/test/resources/contracts")
+	}
+}
+
+// we need the tests to pass to build the stub jar
+stubsJar.dependsOn(test)
+// we want to disable the default Spring Cloud Contract stub jar generation
+verifierStubsJar.enabled = false
+
+artifacts {
+	archives stubsJar
 }
 
 
