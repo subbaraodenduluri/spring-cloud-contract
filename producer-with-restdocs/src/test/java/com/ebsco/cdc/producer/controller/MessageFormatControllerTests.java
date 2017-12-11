@@ -65,18 +65,18 @@ public class MessageFormatControllerTests extends AbstractTest{
 	}
 	
 	@Test
-	public void should_say_hi_when_only_name_and_prefix_is_given() throws Exception {
-		GreetingDTO greetingDTO = new GreetingDTO("Greetings ", "John Doe");
+	public void should_greet_when_name_prefix_suffix_are_given() throws Exception {
+		GreetingDTO greetingDTO = new GreetingDTO("Greetings ", "John Doe", ", How are you!");
 		
 		mockMvc.perform(MockMvcRequestBuilders.post("/formatgreeting")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(json.write(greetingDTO).getJson()))
-				.andExpect(jsonPath("$.formattedGreeting").value("Greetings John Doe"))
+				.andExpect(jsonPath("$.formattedGreeting").value("Greetings John Doe, How are you!"))
 				.andDo(WireMockRestDocs.verify()
 //						.jsonPath("$[?(@.prefix != null)]")
 						.contentType(MediaType.valueOf("application/json"))
-						.stub("shouldPrintFormattedMessageWhenThereIsPrefix"))
-				.andDo(MockMvcRestDocumentation.document("shouldPrintFormattedMessageWhenThereIsPrefix",
+						.stub("shouldPrintFormattedMessageWhenThereIsPrefixAndSuffix"))
+				.andDo(MockMvcRestDocumentation.document("shouldPrintFormattedMessageWhenThereIsPrefixAndSuffix",
 						SpringCloudContractRestDocs.dslContract()));
 	}
 	
