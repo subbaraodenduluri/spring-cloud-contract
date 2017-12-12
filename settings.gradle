@@ -4,4 +4,5 @@ include 'consumerb'
 
 include 'producer-with-restdocs'
 include 'consumer-with-restdocs'
+include 'consumer-with-discovery'
 
